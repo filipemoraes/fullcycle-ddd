@@ -1,5 +1,7 @@
 // AGGREGATE: Customer
 
+import EventDispatcher from "../event/@shared/event-dispatcher";
+import CustomerAddressChangedEvent from "../event/customer/customer-address-changed.event";
 import Address from "./address";
 
 export default class Customer { 
@@ -8,6 +10,7 @@ export default class Customer {
   private _active = false;
   private _address!: Address;
   private _rewardPoints: number = 0;
+  private _eventDispatcher: EventDispatcher;
 
   constructor(id: string, name: string) { 
     this._id = id;
@@ -31,6 +34,10 @@ export default class Customer {
     return this._rewardPoints;
   }
 
+  setEventDispatcher(eventDispatcher: EventDispatcher) { 
+    this._eventDispatcher = eventDispatcher;
+  }
+
   // Esse metodo é muito mais do que um set, ele contém regra de negócio
   // Modelagem de dominio rico expressa o negócio
   changeName(name: string) { 
@@ -41,7 +48,14 @@ export default class Customer {
   }
 
   changeAddress(address: Address) {
+    const customerAddressChangedEvent = new CustomerAddressChangedEvent({
+      id: this._id,
+      name: this._name,
+      address: address.toString()
+    });
+
     this._address = address;
+    this._eventDispatcher.notify(customerAddressChangedEvent);
   }
 
   validate() { 
