@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize-typescript";
 import CustomerModel from "../../../infrastructure/db/sequelize/model/customer.model";
 import CustomerRepository from "../../../infrastructure/repository/customer.repository";
-import Address from "../../entity/address";
-import Customer from "../../entity/customer";
-import EventDispatcher from "../@shared/event-dispatcher";
+import Address from "../value-object/address";
+import Customer from "../entity/customer";
+import EventDispatcher from "../../@shared/event/event-dispatcher";
 import EnviaConsoleLogHandler from "./handler/envia-console-log.handler";
 
 describe("Customer address changed event tests", () => { 

@@ -1,11 +1,11 @@
 import { Sequelize } from "sequelize-typescript";
 import CustomerModel from "../../../infrastructure/db/sequelize/model/customer.model";
 import CustomerRepository from "../../../infrastructure/repository/customer.repository";
-import Address from "../../entity/address";
-import Customer from "../../entity/customer";
-import EventDispatcher from "../@shared/event-dispatcher";
+import Address from "../value-object/address";
+import Customer from "../entity/customer";
 import EnviaConsoleLog1Handler from "./handler/envia-console-log1.handler";
 import EnviaConsoleLog2Handler from "./handler/envia-console-log2.handler";
+import EventDispatcher from "../../@shared/event/event-dispatcher";
 
 describe("Customer created event tests", () => { 
   let sequelize: Sequelize;

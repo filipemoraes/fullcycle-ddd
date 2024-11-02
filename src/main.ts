@@ -1,8 +1,8 @@
-import Customer from "./domain/entity/customer";
-import Address from "./domain/entity/address";
-import OrderItem from "./domain/entity/ordem-item";
-import Order from "./domain/entity/order";
-import EventDispatcher from "./domain/event/@shared/event-dispatcher";
+import EventDispatcher from "./domain/@shared/event/event-dispatcher";
+import OrderItem from "./domain/checkout/entity/ordem-item";
+import Order from "./domain/checkout/entity/order";
+import Customer from "./domain/customer/entity/customer";
+import Address from "./domain/customer/value-object/address";
 
 // Customer aggregate
 // Relação via ID com o Order aggregate, pois são diferentes agregados

@@ -1,8 +1,8 @@
 // AGGREGATE: Customer
 
-import EventDispatcher from "../event/@shared/event-dispatcher";
-import CustomerAddressChangedEvent from "../event/customer/customer-address-changed.event";
-import Address from "./address";
+import EventDispatcher from "../../@shared/event/event-dispatcher";
+import CustomerAddressChangedEvent from "../event/customer-address-changed.event";
+import Address from "../value-object/address";
 
 export default class Customer { 
   private _id: string;
