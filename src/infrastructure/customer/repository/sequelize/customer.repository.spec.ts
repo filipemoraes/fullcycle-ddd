@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize-typescript";
-import Customer from "../../domain/customer/entity/customer";
-import Address from "../../domain/customer/value-object/address";
-import CustomerModel from "../db/sequelize/model/customer.model";
+import Customer from "../../../../domain/customer/entity/customer";
+import Address from "../../../../domain/customer/value-object/address";
+import CustomerModel from "./customer.model";
 import CustomerRepository from "./customer.repository";
-import EventDispatcher from "../../domain/@shared/event/event-dispatcher";
+import EventDispatcher from "../../../../domain/@shared/event/event-dispatcher";
 
 describe("Customer repository test", () => {
   let sequelize: Sequelize;
